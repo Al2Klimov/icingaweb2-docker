@@ -1,0 +1,11 @@
+--- packages/files/apache/icingaweb2.conf
++++ packages/files/apache/icingaweb2.conf
+@@ -1 +1 @@
+-Alias /icingaweb2 "/usr/share/icingaweb2/public"
++Alias / "/usr/share/icingaweb2/public/"
+@@ -37 +37 @@
+-        RewriteBase /icingaweb2/
++        RewriteBase /
+@@ -47 +47 @@
+-        ErrorDocument 404 /icingaweb2/error_norewrite.html
++        ErrorDocument 404 /error_norewrite.html
