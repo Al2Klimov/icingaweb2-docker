@@ -115,7 +115,7 @@ if [ ! -e 'icingaweb2/modules/icingadb' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-icingadb.git' dockerweb2-temp
 	# HEAD
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/icingadb/' edca331920227874fccbed85facd8580d163c895 |tar -x
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/icingadb/' 0198e62712a01496b18b2b42ff46a8019642d6a8 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/idoreports' ]; then
