@@ -3,8 +3,8 @@ set -exo pipefail
 
 rm -rf dockerweb2-temp
 git clone --bare 'https://github.com/Icinga/icingaweb2.git' dockerweb2-temp
-# HEAD
-git -C dockerweb2-temp archive --prefix=icingaweb2/ 9a900c62f50772add000e0b0f3f9e952af113d76 |tar -x
+# v2.8.0-rc1
+git -C dockerweb2-temp archive --prefix=icingaweb2/ 95328553ca1336701044282c3b065a20f36af039 |tar -x
 
 if [ ! -e 'icingaweb2/modules/audit' ]; then
 	rm -rf dockerweb2-temp
