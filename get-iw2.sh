@@ -3,8 +3,8 @@ set -exo pipefail
 
 rm -rf dockerweb2-temp
 git clone --bare 'https://github.com/Icinga/icingaweb2.git' dockerweb2-temp
-# v2.7.3
-git -C dockerweb2-temp archive --prefix=icingaweb2/ 06cabfe8ba28cf545a42c92f25484383191a4e51 |tar -x
+# v2.8.0-rc1
+git -C dockerweb2-temp archive --prefix=icingaweb2/ 95328553ca1336701044282c3b065a20f36af039 |tar -x
 
 if [ ! -e 'icingaweb2/modules/audit' ]; then
 	rm -rf dockerweb2-temp
@@ -111,6 +111,13 @@ if [ ! -e 'icingaweb2/modules/graphite' ]; then
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/graphite/' cb2a94397529f5a4b73d423fe89fabf2b0f064a6 |tar -x
 fi
 
+if [ ! -e 'icingaweb2/modules/icingadb' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Icinga/icingaweb2-module-icingadb.git' dockerweb2-temp
+	# HEAD
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/icingadb/' d19b238efdf5f2120a1ab7331614aa322e12afe7 |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/idoreports' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-idoreports.git' dockerweb2-temp
@@ -128,8 +135,8 @@ fi
 if [ ! -e 'icingaweb2/modules/ipl' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-ipl.git' dockerweb2-temp
-	# v0.5.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/ipl/' dd3e987a4b7967d087e1a69f6ebeca4ed4a5d89d |tar -x
+	# v0.4.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/ipl/' 8fe523cecb6a62643b70efcaf8ae7d5870f97e0d |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/jira' ]; then
