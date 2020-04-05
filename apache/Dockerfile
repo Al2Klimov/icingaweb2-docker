@@ -13,7 +13,10 @@ RUN ["/bin/bash", "-exo", "pipefail", "-c", "cd /icingaweb2; patch -p0 < ../icin
 
 FROM debian:testing-slim
 
-RUN ["/bin/bash", "-exo", "pipefail", "-c", "apt-get update; apt-get install --no-install-recommends --no-install-suggests -y apache2 'libapache2-mod-php*.*' $(apt list 'php*.*-*' |cut -d / -f 1 |grep -vEe '-cgi$' -e '-cli$' -e '-dev$' -e '-fpm$' -e '-phpdbg$'); apt-get clean; rm -vrf /var/lib/apt/lists/*"]
+RUN ["/bin/bash", "-exo", "pipefail", "-c", "apt-get update; apt-get install --no-install-recommends --no-install-suggests -y apache2 'libapache2-mod-php*.*' locales $(apt list 'php*.*-*' |cut -d / -f 1 |grep -vEe '-cgi$' -e '-cli$' -e '-dev$' -e '-fpm$' -e '-phpdbg$'); apt-get clean; rm -vrf /var/lib/apt/lists/*"]
+
+RUN ["perl", "-pi", "-e", "if (/\\bUTF-8$/) { s/^# *// }", "/etc/locale.gen"]
+RUN ["locale-gen", "-j", "4"]
 
 RUN ["a2enmod", "rewrite"]
 RUN ["ln", "-vsf", "/dev/stdout", "/var/log/apache2/access.log"]
