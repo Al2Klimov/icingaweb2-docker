@@ -3,8 +3,8 @@ set -exo pipefail
 
 rm -rf dockerweb2-temp
 git clone --bare 'https://github.com/Icinga/icingaweb2.git' dockerweb2-temp
-# v2.8.0-rc1
-git -C dockerweb2-temp archive --prefix=icingaweb2/ 95328553ca1336701044282c3b065a20f36af039 |tar -x
+# v2.7.3
+git -C dockerweb2-temp archive --prefix=icingaweb2/ 06cabfe8ba28cf545a42c92f25484383191a4e51 |tar -x
 
 if [ ! -e 'icingaweb2/modules/audit' ]; then
 	rm -rf dockerweb2-temp
@@ -18,6 +18,13 @@ if [ ! -e 'icingaweb2/modules/aws' ]; then
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-aws.git' dockerweb2-temp
 	# v1.0.0
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/aws/' 0a889cc8eb60308e0dbe12e458298c1ef1a3553d |tar -x
+fi
+
+if [ ! -e 'icingaweb2/modules/bayerisch' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/NETWAYS/icingaweb2-theme-bayerisch.git' dockerweb2-temp
+	# v1.0.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/bayerisch/' 17423cc54ed1c0405cab64365767dfd2ce72da4d |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/bridgedays' ]; then
@@ -46,6 +53,13 @@ if [ ! -e 'icingaweb2/modules/businessprocess' ]; then
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-businessprocess.git' dockerweb2-temp
 	# v2.2.0
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/businessprocess/' 73ad4a25ddfb6e0e0914d65109f3a83a6f876d34 |tar -x
+fi
+
+if [ ! -e 'icingaweb2/modules/company' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Icinga/icingaweb2-theme-company.git' dockerweb2-temp
+	# v1.0.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/company/' 17a15575ce6e887baab69d053318a48e707a1816 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/cube' ]; then
@@ -97,6 +111,13 @@ if [ ! -e 'icingaweb2/modules/fileshipper' ]; then
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/fileshipper/' c800286277fbd7676573a17026071ebc1c85de7e |tar -x
 fi
 
+if [ ! -e 'icingaweb2/modules/fraenkisch' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/NETWAYS/icingaweb2-theme-fraenkisch.git' dockerweb2-temp
+	# v1.0.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/fraenkisch/' d19c6071f670c2ceea7cef956d0957c5c50754bb |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/generictts' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-generictts.git' dockerweb2-temp
@@ -109,13 +130,6 @@ if [ ! -e 'icingaweb2/modules/graphite' ]; then
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-graphite.git' dockerweb2-temp
 	# v1.1.0
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/graphite/' cb2a94397529f5a4b73d423fe89fabf2b0f064a6 |tar -x
-fi
-
-if [ ! -e 'icingaweb2/modules/icingadb' ]; then
-	rm -rf dockerweb2-temp
-	git clone --bare 'https://github.com/Icinga/icingaweb2-module-icingadb.git' dockerweb2-temp
-	# HEAD
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/icingadb/' d19b238efdf5f2120a1ab7331614aa322e12afe7 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/idoreports' ]; then
@@ -135,8 +149,8 @@ fi
 if [ ! -e 'icingaweb2/modules/ipl' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-ipl.git' dockerweb2-temp
-	# v0.4.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/ipl/' 8fe523cecb6a62643b70efcaf8ae7d5870f97e0d |tar -x
+	# v0.5.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/ipl/' dd3e987a4b7967d087e1a69f6ebeca4ed4a5d89d |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/jira' ]; then
@@ -165,6 +179,13 @@ if [ ! -e 'icingaweb2/modules/nagvis' ]; then
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-nagvis.git' dockerweb2-temp
 	# v1.1.1
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/nagvis/' 7eda23781cac6488b863d103d42007bd558302d6 |tar -x
+fi
+
+if [ ! -e 'icingaweb2/modules/oesterreichisch' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/NETWAYS/icingaweb2-theme-oesterreichisch.git' dockerweb2-temp
+	# v1.0.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/oesterreichisch/' f5895897245a25258b40656da1b650ff25158924 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/pdfexport' ]; then
