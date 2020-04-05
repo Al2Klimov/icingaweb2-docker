@@ -132,6 +132,13 @@ if [ ! -e 'icingaweb2/modules/graphite' ]; then
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/graphite/' cb2a94397529f5a4b73d423fe89fabf2b0f064a6 |tar -x
 fi
 
+if [ ! -e 'icingaweb2/modules/icingadb' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Icinga/icingadb-web.git' dockerweb2-temp
+	# v1.0.0-rc1
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/icingadb/' 5cdad5f122da48965303fea2b5a2509eb2568667 |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/idoreports' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-idoreports.git' dockerweb2-temp
