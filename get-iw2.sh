@@ -237,6 +237,13 @@ if [ ! -e 'icingaweb2/modules/reporting' ]; then
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/reporting/' 5d59f5001ad8cfe316f9e1570f8ebbdad08b9261 |tar -x
 fi
 
+if [ ! -e 'icingaweb2/modules/spb' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Al2Klimov/icingaweb2-theme-spb.git' dockerweb2-temp
+	# HEAD
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/spb/' 74e653878b1a5a14f0a4bb0b08e0232b651a2c15 |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/test' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-test.git' dockerweb2-temp
