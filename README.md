@@ -10,7 +10,7 @@ docker run --rm -d -p 8080:80 -v iw2cfg:/etc/icingaweb2 grandmaster/icingaweb2:a
 ## How it works
 
 1. Every night [a bot] auto-discovers all repositories
-   like `icingaweb2-module-*` of [@Icinga], [@masif-upgrader] and [@Al2Klimov]
+   like e.g. `icingaweb2-module-*` of [@Icinga], [@NETWAYS], [@masif-upgrader] and [@Al2Klimov]
 2. Based on the latest versions of these and the framework itself
    the bot updates [get-iw2.sh] – this triggers the auto-build on [Docker Hub]
 
@@ -18,6 +18,7 @@ docker run --rm -d -p 8080:80 -v iw2cfg:/etc/icingaweb2 grandmaster/icingaweb2:a
 [Docker]: https://www.docker.com
 [a bot]: https://github.com/Al2Klimov/dockerweb2
 [@Icinga]: https://github.com/Icinga
+[@NETWAYS]: https://github.com/NETWAYS
 [@masif-upgrader]: https://github.com/masif-upgrader
 [@Al2Klimov]: https://github.com/Al2Klimov
 [get-iw2.sh]: get-iw2.sh
