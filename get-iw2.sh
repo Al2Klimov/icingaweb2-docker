@@ -241,7 +241,7 @@ if [ ! -e 'icingaweb2/modules/spb' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Al2Klimov/icingaweb2-theme-spb.git' dockerweb2-temp
 	# HEAD
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/spb/' 74e653878b1a5a14f0a4bb0b08e0232b651a2c15 |tar -x
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/spb/' 0d626c1d41dd99e6b89ac5a5d4a1a67d45c3fb52 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/test' ]; then
