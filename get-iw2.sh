@@ -6,6 +6,13 @@ git clone --bare 'https://github.com/Icinga/icingaweb2.git' dockerweb2-temp
 # v2.7.3
 git -C dockerweb2-temp archive --prefix=icingaweb2/ 06cabfe8ba28cf545a42c92f25484383191a4e51 |tar -x
 
+if [ ! -e 'icingaweb2/modules/apocalypse' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Al2Klimov/icingaweb2-theme-apocalypse.git' dockerweb2-temp
+	# v1.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/apocalypse/' 7de563c4b0c368e2cf347659211f61eb13f24ae6 |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/audit' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-audit.git' dockerweb2-temp
