@@ -72,8 +72,8 @@ fi
 if [ ! -e 'icingaweb2/modules/cube' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-cube.git' dockerweb2-temp
-	# v1.1.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/cube/' 4f70d558b23e4341e7957ffb7229be7ca6487d80 |tar -x
+	# v1.1.1
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/cube/' 62a3d0605efaf1d20f8023fee740eb4c457ac835 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/director' ]; then
