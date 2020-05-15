@@ -11,7 +11,7 @@ ADD apache/icingaweb2.conf.patch /
 RUN ["/bin/bash", "-exo", "pipefail", "-c", "cd /icingaweb2; patch -p0 < ../icingaweb2.conf.patch"]
 
 
-FROM debian:testing-slim
+FROM debian:stable-slim
 
 RUN ["/bin/bash", "-exo", "pipefail", "-c", "apt-get update; apt-get install --no-install-recommends --no-install-suggests -y apache2 'libapache2-mod-php*.*' locales $(apt list 'php*.*-*' |cut -d / -f 1 |grep -vEe '-cgi$' -e '-cli$' -e '-dev$' -e '-fpm$' -e '-phpdbg$'); apt-get clean; rm -vrf /var/lib/apt/lists/*"]
 
