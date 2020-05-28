@@ -58,8 +58,8 @@ fi
 if [ ! -e 'icingaweb2/modules/businessprocess' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-businessprocess.git' dockerweb2-temp
-	# v2.2.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/businessprocess/' 73ad4a25ddfb6e0e0914d65109f3a83a6f876d34 |tar -x
+	# v2.3.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/businessprocess/' 346ace79d0a2908e7cc73ab832233ab58c63da6a |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/company' ]; then
