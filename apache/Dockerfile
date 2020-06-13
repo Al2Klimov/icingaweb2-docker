@@ -1,10 +1,6 @@
 FROM composer as install
 
 ADD get-iw2.sh /
-
-# framework: v2.7.3 -> v2.8.0-rc1
-RUN ["sed", "-i", "s/06cabfe8ba28cf545a42c92f25484383191a4e51/95328553ca1336701044282c3b065a20f36af039/", "/get-iw2.sh"]
-
 RUN ["/bin/bash", "-exo", "pipefail", "-c", "cd /; /get-iw2.sh; for d in icingaweb2 icingaweb2/modules/*; do pushd $d; if [ -e composer.json ]; then composer install --no-dev --ignore-platform-reqs; fi; popd; done"]
 
 ADD apache/icingaweb2.conf.patch /
