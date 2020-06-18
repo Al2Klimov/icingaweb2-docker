@@ -269,7 +269,7 @@ if [ ! -e 'icingaweb2/modules/training' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-training.git' dockerweb2-temp
 	# HEAD
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/training/' 8f4510cf90ba076c7f7244db3651c006beac4442 |tar -x
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/training/' 414811208c02889ec54a826b6ee134f268664f70 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/vsphere' ]; then
