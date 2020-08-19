@@ -272,6 +272,13 @@ if [ ! -e 'icingaweb2/modules/training' ]; then
 	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/training/' 414811208c02889ec54a826b6ee134f268664f70 |tar -x
 fi
 
+if [ ! -e 'icingaweb2/modules/vola' ]; then
+	rm -rf dockerweb2-temp
+	git clone --bare 'https://github.com/Icinga/vola.git' dockerweb2-temp
+	# v1.0.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/vola/' cc067bae6632cb3efe1819b1a5d6c48c5756a9a6 |tar -x
+fi
+
 if [ ! -e 'icingaweb2/modules/vsphere' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-vsphere.git' dockerweb2-temp
