@@ -3,8 +3,8 @@ set -exo pipefail
 
 rm -rf dockerweb2-temp
 git clone --bare 'https://github.com/Icinga/icingaweb2.git' dockerweb2-temp
-# v2.8.1
-git -C dockerweb2-temp archive --prefix=icingaweb2/ 233bd29e4104125b4e5ef631e8c16dde33dadd9a |tar -x
+# v2.8.2
+git -C dockerweb2-temp archive --prefix=icingaweb2/ 8a89839af94a247ee2149b2336c73b8251b477c0 |tar -x
 
 if [ ! -e 'icingaweb2/modules/apocalypse' ]; then
 	rm -rf dockerweb2-temp
