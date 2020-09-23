@@ -233,8 +233,8 @@ fi
 if [ ! -e 'icingaweb2/modules/reactbundle' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-reactbundle.git' dockerweb2-temp
-	# v0.7.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/reactbundle/' 8b8c9689e5883cd890fb92b7ca22659af56b2c94 |tar -x
+	# v0.8.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/reactbundle/' efb0b3b1153ecde3a2447c2117afb2cb4fb0893c |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/reporting' ]; then
