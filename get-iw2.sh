@@ -23,8 +23,8 @@ fi
 if [ ! -e 'icingaweb2/modules/aws' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-aws.git' dockerweb2-temp
-	# v1.0.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/aws/' 0a889cc8eb60308e0dbe12e458298c1ef1a3553d |tar -x
+	# v1.1.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/aws/' 2494e4d3c4db39e674c9e547dd04d8f771322fb5 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/bayerisch' ]; then
