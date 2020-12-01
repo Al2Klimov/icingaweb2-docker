@@ -156,8 +156,8 @@ fi
 if [ ! -e 'icingaweb2/modules/incubator' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-incubator.git' dockerweb2-temp
-	# v0.5.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/incubator/' f24a26f51d37688e85617da713be54c4e853e462 |tar -x
+	# v0.6.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/incubator/' e3915b41b4cb64f88de7ca64a72e5bec8bb12d7d |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/ipl' ]; then
