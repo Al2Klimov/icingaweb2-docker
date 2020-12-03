@@ -114,8 +114,8 @@ fi
 if [ ! -e 'icingaweb2/modules/fileshipper' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-fileshipper.git' dockerweb2-temp
-	# v1.1.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/fileshipper/' c800286277fbd7676573a17026071ebc1c85de7e |tar -x
+	# v1.2.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/fileshipper/' fa8e7cd008cb2ff49bbfa3d62d335f043f783b53 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/fraenkisch' ]; then
