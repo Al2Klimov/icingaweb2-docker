@@ -79,8 +79,8 @@ fi
 if [ ! -e 'icingaweb2/modules/director' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-director.git' dockerweb2-temp
-	# v1.7.2
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/director/' 9c95fb8680f6f389ca24ff6e41d9002185596cb3 |tar -x
+	# v1.8.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/director/' bce17819729a9a26fd693bd5bd17f3a1482b5a91 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/discourse_notifier' ]; then
