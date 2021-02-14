@@ -184,8 +184,8 @@ fi
 if [ ! -e 'icingaweb2/modules/masifupgrader' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/masif-upgrader/icingaweb2-module-masifupgrader.git' dockerweb2-temp
-	# v0.7
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/masifupgrader/' a5ad94ad835bd9a4faa1a2907b374e0501d1d48d |tar -x
+	# v0.8
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/masifupgrader/' d8f9923bae8c33cfd43f1ce50926dce52e9ca025 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/nagvis' ]; then
