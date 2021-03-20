@@ -261,8 +261,8 @@ fi
 if [ ! -e 'icingaweb2/modules/toplevelview' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-toplevelview.git' dockerweb2-temp
-	# v0.3.1
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/toplevelview/' 463873b658b1063f92712b124f33e1ae56bae284 |tar -x
+	# v0.3.2
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/toplevelview/' 4a1a81a59a29e01fbbe834e99fc8928f059d7100 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/training' ]; then
