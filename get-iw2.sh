@@ -282,8 +282,8 @@ fi
 if [ ! -e 'icingaweb2/modules/vsphere' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-vsphere.git' dockerweb2-temp
-	# v1.1.0
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/vsphere/' 516dae9c01dbde84b9e45628e81fd981061800df |tar -x
+	# v1.1.1
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/vsphere/' 012083aa3c0ef3306e82f64c0d498a4c31af8a01 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/vspheredb' ]; then
