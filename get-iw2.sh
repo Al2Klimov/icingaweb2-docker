@@ -170,8 +170,8 @@ fi
 if [ ! -e 'icingaweb2/modules/jira' ]; then
 	rm -rf dockerweb2-temp
 	git clone --bare 'https://github.com/Icinga/icingaweb2-module-jira.git' dockerweb2-temp
-	# v1.0.1
-	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/jira/' c645ff56f60c6418155cd9c02101ae0cb390fa32 |tar -x
+	# v1.1.0
+	git -C dockerweb2-temp archive '--prefix=icingaweb2/modules/jira/' 648c7295ca462053df4e9928c614caeb59e1a486 |tar -x
 fi
 
 if [ ! -e 'icingaweb2/modules/lynxtechnik' ]; then
